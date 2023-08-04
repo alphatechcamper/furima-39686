@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :sales_status
   belongs_to :shipping_fee_status
-  belongs_to :schedule
+  belongs_to :schedule_delivery
 
   validates :image, presence: true
   validates :name, presence: true
