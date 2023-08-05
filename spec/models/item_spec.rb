@@ -25,7 +25,7 @@ RSpec.describe Item, type: :model do
       it '商品説明が空だと出品できない' do
         @item.info = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Explanation can't be blank")
+        expect(@item.errors.full_messages).to include("Info can't be blank")
       end
       it 'カテゴリー情報が未選択だと出品できない' do
         @item.category_id = 1
@@ -50,7 +50,7 @@ RSpec.describe Item, type: :model do
       it '発送までの日数が未選択だと出品できない' do
         @item.schedule_delivery_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Schedule can't be blank")
+        expect(@item.errors.full_messages).to include("Schedule delivery can't be blank")
       end
       it '価格が空だと出品できない' do
         @item.price = ''
