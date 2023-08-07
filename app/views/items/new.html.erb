@@ -5,6 +5,8 @@
   </header>
   <div class="items-sell-main">
     <h2 class="items-sell-title">商品の情報を入力</h2>
+    <%= form_with model: @item, url: items_path,data: { turbo: false }, local: true do |f| %>
+
     <%= form_with model: @item, url: items_path, data: { turbo: false }, local: true do |f| %>
 
 
@@ -80,7 +82,7 @@
           発送までの日数
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:schedule_delivery_id, ScheduleDelivery.all, :id, :schedule, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
+        <%= f.collection_select(:schedule_delivery_id, ScheduleDelivery.all, :id, :schedule_delivery, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
       </div>
     </div>
     <%# /配送について %>
