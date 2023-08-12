@@ -2,4 +2,4 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import "calcItemPrice"
-import "card.js"
+import "card"
