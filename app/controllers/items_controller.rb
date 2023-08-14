@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
   before_action :set_item, only: [:show, :edit, :update]
-  before_action :move_to_index, only: [:edit]
+  before_action :soldout_edit, only: [:edit]
 
   def index
     @item = Item.all.order(created_at: :DESC)
@@ -13,9 +13,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.sold = false
-    if @item.valid?
-      @item.save
+     if @item.save
       redirect_to root_path
     else
       render :new, status: :unprocessable_entity
@@ -59,4 +57,14 @@ class ItemsController < ApplicationController
 
     redirect_to action: :index
   end
+
+  def soldout_edit
+      @item = Item.find(params[:id])
+   if @item.order.blank? && @item.user_id == current_user.id
+       render :edit
+   else
+      redirect_to root_path
+    end
+  end
+
 end
