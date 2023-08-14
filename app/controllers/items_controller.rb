@@ -59,7 +59,6 @@ class ItemsController < ApplicationController
   end
 
   def soldout_edit
-      @item = Item.find(params[:id])
    if @item.order.blank? && @item.user_id == current_user.id
        render :edit
    else
