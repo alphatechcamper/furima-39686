@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :items
+  has_many :orders
 
   validates :nickname, presence: true
   validates :password,
@@ -14,8 +15,8 @@ class User < ApplicationRecord
   validates :last_name, presence: true,
                         format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: 'should be a full-width name' }
   validates :first_name_kana, presence: true,
-                             format: { with: /\A[ァ-ヶ]+\z/, message: 'should be a full-width katakana name' }
+                              format: { with: /\A[ァ-ヶ]+\z/, message: 'should be a full-width katakana name' }
   validates :last_name_kana, presence: true,
-                            format: { with: /\A[ァ-ヶ]+\z/, message: 'should be a full-width katakana name' }
+                             format: { with: /\A[ァ-ヶ]+\z/, message: 'should be a full-width katakana name' }
   validates :user_birth_date, presence: true
 end
