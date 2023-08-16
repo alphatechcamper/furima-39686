@@ -92,3 +92,4 @@ gem 'active_hash'
 
 gem 'payjp'
 gem 'gon'
+gem 'rails-i18n'
