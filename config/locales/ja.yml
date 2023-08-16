@@ -3,10 +3,10 @@ ja:
     attributes:
       user:
         nickname: ニックネーム
-        first_name: 名字
-        last_name: 名前
-        first_name_kana: 名字(カナ)
-        last_name_kana: 名前(カナ)
+        first_name: 名前
+        last_name: 名字
+        first_name_kana: 名前(カナ)
+        last_name_kana: 名字(カナ)
         user_birth_date: 誕生日
       item:
         image: 商品画像
@@ -20,7 +20,7 @@ ja:
         sales_status_id: 商品の状態
   activemodel:
     attributes:
-      shipping_add:
+      order_form:
         postal_code: 郵便番号
         prefecture_id: 都道府県
         city: 市区町村

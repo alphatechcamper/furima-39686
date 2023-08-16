@@ -4,10 +4,10 @@ class OrderForm
 
   with_options presence: true do
     validates :city, :addresses, :token, :user_id, :item_id
-    validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'はハイフンを含めて入力してください' }
+    validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'にハイフンを含めて入力してください' }
     validates :prefecture_id, numericality: { other_than: 1, message: "を入力してください" }
     validates :phone_number,
-              format: { with: /\A\d{10,11}\z/, message: '10～11桁の半角数値を入力してください' }
+              format: { with: /\A\d{10,11}\z/, message: 'を正しく入力してください' }
   end
 
   def save
